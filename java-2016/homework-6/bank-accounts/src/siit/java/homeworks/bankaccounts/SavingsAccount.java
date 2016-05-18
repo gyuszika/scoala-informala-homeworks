@@ -59,7 +59,7 @@ public class SavingsAccount extends BankAccount {
 	 * @return returns balance with interest included
 	 */
 	public float calculateInterest(Date balanceDate) {
-
+		// TODO CODE REVIEW: you could have called this from the getBalance Method -> similar to CreditAccount. But this is ok as well.
 		Calendar accountCreationTime = Calendar.getInstance();
 		accountCreationTime.setTime(getAccountCreationDate());
 		Calendar balanceTime = Calendar.getInstance();

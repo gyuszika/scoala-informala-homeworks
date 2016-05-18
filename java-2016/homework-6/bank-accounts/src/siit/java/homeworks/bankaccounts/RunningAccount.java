@@ -17,6 +17,7 @@ public class RunningAccount extends BankAccount {
 		super(accountCreationDate, monthlyFee);
 	}
 
+	// TODO CODE REVIEW: you don't need to override methods in children classes if there is no added behavior. All visible methods from parents are inherited by default.
 	public void withdrawFunds(float amount) throws InsufficientFundsException {
 		super.withdrawFunds(amount);
 	}
