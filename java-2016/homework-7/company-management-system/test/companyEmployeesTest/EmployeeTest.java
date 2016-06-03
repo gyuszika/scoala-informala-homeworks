@@ -18,19 +18,21 @@ public class EmployeeTest {
 
 		this.person = new TreeSet<>();
 
-		person.add(new Person("CEO", 20, "John Smith"));
-		person.add(new Person("CFO", 3, "Herr Carlos"));
-		person.add(new Person("PM", 10, "Vishnu Kumar"));
-		person.add(new Person("Dev", 6, "Raj Mahatma"));
-		person.add(new Person("Dev", 9, "Sanjiy Marakesh"));
+		person.add(new Person("Manager", "CEO", 20, "John Smith"));
+		person.add(new Person("Manager", "CFO", 3, "Herr Carlos"));
+		person.add(new Person("Manager", "PM", 10, "Vishnu Kumar"));
+		person.add(new Person("Engineer", "Dev", 6, "Raj Mahatma"));
+		person.add(new Person("Engineer", "Dev", 9, "Sanjiy Marakesh"));
+		person.add(new Person("Engineer", "Dev", 1, "Nelson Mondialu"));
 	}
 
 	@Test
 	public void showEmployeeList() throws WrongSeniorityException {
+		System.out.println();
 		System.out.println("Employee list:");
 		for (Person person : person) {
 			System.out.println(person);
-			System.out.println();
+			
 		}
 	}
 
@@ -40,7 +42,27 @@ public class EmployeeTest {
 		System.out.println("Employees without parking space:");
 		for (Person person : person) {
 			person.showSeniority();
-			System.out.println();
+			
+		}
+	}
+
+	@Test
+	public void sortedManagerList() throws WrongSeniorityException {
+		System.out.println();
+		System.out.println("Manager list:");
+		for (Person person : person) {
+			person.showManagerList();
+			
+		}
+	}
+
+	@Test
+	public void sortedEngineerList() throws WrongSeniorityException {
+		System.out.println();
+		System.out.println("Engineer list:");
+		for (Person person : person) {
+			person.showEngineerList();
+			
 		}
 	}
 }

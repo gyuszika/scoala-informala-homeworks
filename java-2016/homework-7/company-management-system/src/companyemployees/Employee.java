@@ -8,9 +8,18 @@ public abstract class Employee {
 
 	protected String position;
 	protected int seniority;
+	protected String function;
 
 	public String getPosition() {
 		return position;
+	}
+
+	public String getFunction() {
+		return function;
+	}
+
+	public void setFuntion(String function) {
+		this.function = function;
 	}
 
 	public void setPosition(String position) {
@@ -25,7 +34,8 @@ public abstract class Employee {
 		this.seniority = seniority;
 	}
 
-	public Employee(String position, int seniority) {
+	public Employee(String function,String position, int seniority) {
+		this.function = function;
 		this.position = position;
 		this.seniority = seniority;
 	}
