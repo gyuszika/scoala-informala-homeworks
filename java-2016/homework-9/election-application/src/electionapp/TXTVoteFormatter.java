@@ -3,12 +3,19 @@ package electionapp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class TXTVoteFormatter {
 
-	private static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("yyyy-MMM-dd hh:mm");
+	private static final SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("yyyy-MMM-dd hh:mm:ss");
 
 	public String toTXT(VoteList vote) {
+		Random r = new Random();
+		try {
+			Thread.sleep(r.nextInt(2000));
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return DATE_FORMATER.format(vote.getDate()) + "," + vote.getCnp() + "," + vote.getCitizenName() + ","
 				+ vote.getCandidate();
 
